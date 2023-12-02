@@ -8,7 +8,7 @@ export default function LocationListItem ({
 }) {
     return(
         <div className="card">
-          <img src={imageUrl} className="card-img-top-bottom" alt=""/>
+          <img src={imageUrl} className="card-img-top-bottom" alt={title}/>
           <h6>{category}</h6>
           <h2 className="card-title">{title}</h2>
           <Link to={`/locations/${_id}`} className="btn btn-primary details-button">Details</Link>

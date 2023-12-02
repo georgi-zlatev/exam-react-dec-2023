@@ -25,7 +25,7 @@ export default function About() {
         <div className="card-body">
           <h3 className="card-text">Georgi Zlatev</h3>
           <p>CTO</p>
-          <a href="https://github.com/georgi-zlatev" className="btn btn-dark">Github</a>
+          <a href="https://github.com/georgi-zlatev" className="btn btn-dark" target="_blank">Github</a>
         </div>
       </div>
     </>
