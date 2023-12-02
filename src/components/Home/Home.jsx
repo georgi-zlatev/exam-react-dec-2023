@@ -1,3 +1,6 @@
+import React from "react";
+import "./Home.css"; // Import the CSS file
+
 export default function Home() {
     return(
         <div className="welcome-world">
