@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Footer from "./components/Footer/Footer";
 import '@fortawesome/fontawesome-free/css/all.css';
+import LocationList from "./components/LocationsListItem/LocationsList";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header/>
       <Routes>  
       <Route path="/" element={<Home />} />
+      <Route path="/locations" element={<LocationList />} />
       </Routes>
       <Footer/>
     </div>

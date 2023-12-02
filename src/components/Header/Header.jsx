@@ -14,6 +14,7 @@ export default function Header() {
       <ul class="navbar-nav">
         <li class="nav-item">
           <Link to="/" class="nav-link active">Home</Link>
+          <Link to="/locations" class="nav-link active">Locations</Link>
         </li>
       </ul>
     </div>
