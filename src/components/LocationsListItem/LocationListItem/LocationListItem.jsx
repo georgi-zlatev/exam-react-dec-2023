@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom"
 
+import './LocationListItem.css'
+
 
 export default function LocationListItem ({
     title, category, imageUrl, _id
 }) {
     return(
-        <div className="allLocations">
-        <div className="allLocations-info">
-          <img src={imageUrl} />
+        <div className="card">
+          <img src={imageUrl} className="card-img-top-bottom" alt=""/>
           <h6>{category}</h6>
-          <h2>{title}</h2>
-          <Link to={`/locations/${_id}`} className="details-button">Details</Link>
+          <h2 className="card-title">{title}</h2>
+          <Link to={`/locations/${_id}`} className="btn btn-primary">Details</Link>
         </div>
-      </div>
     )
 }
