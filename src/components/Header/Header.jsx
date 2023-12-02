@@ -1,25 +1,38 @@
+// Header.js
+
+import React from "react";
 import { Link } from "react-router-dom";
-import "./Header.css"; 
+import "./Header.css";
 
 export default function Header() {
-    return(
-        <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Local Food Events</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <Link to="/" class="nav-link active">Home</Link>
-          <Link to="/locations" class="nav-link active">Locations</Link>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-      </header>
-    )
+  return (
+    <header>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
+          <Link to="/" className="navbar-brand">Local Food Events</Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link to="/" className="nav-link active">Home</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/locations" className="nav-link">Locations</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
 }
