@@ -1,21 +1,21 @@
 import * as request from "../lib/request";
 
-const baseUrl = "mongodb://127.0.0.1:27017/local-food-events";
+const baseUrl = "http://localhost:3030/jsonstore/locations";
 
 export const getAll = async () => {
-  const result = await request.get(`${baseUrl}/locations`);
+  const result = await request.get(baseUrl);
 
   return Object.values(result);
 };
 
 export const create = async (locationData) => {
-  const result = await request.post(`${baseUrl}/locations`, locationData);
+  const result = await request.post(baseUrl, locationData);
 
   return result;
 };
 
 export const getOne = async (locationId) => {
-  const result = await request.get(`${baseUrl}/locations/${locationId}`, );
+  const result = await request.get(`${baseUrl}/${locationId}`, );
 
   return result;
 }
