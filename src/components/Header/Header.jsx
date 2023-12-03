@@ -1,10 +1,14 @@
 // Header.js
 
-import React from "react";
+import {useContext} from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import AuthContext from "../../contexts/authContexts";
 
 export default function Header() {
+  const { isAuthenticated, username } = useContext(AuthContext);
+
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -35,15 +39,20 @@ export default function Header() {
             </ul>
           </div>
 
+          {isAuthenticated && (
           <div id="user">
-          <Link className="nav-link" to="/locations/create">Create Location</Link>
-          <Link className="nav-link" to="/logout">Logout</Link>
+            <Link to="/games/create">Create Game</Link>
+            <Link to="/logout">Logout</Link>
+            <span>|  Welcome, {username}</span>
           </div>
+        )}
 
-        <div id="guest">
-          <Link className="nav-link" to="/login">Login</Link>
-          <Link className="nav-link" to="/register">Register</Link>
-        </div>
+        {!isAuthenticated && (
+          <div id="guest">
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
+          </div>
+        )}
         </div>
       </nav>
     </header>

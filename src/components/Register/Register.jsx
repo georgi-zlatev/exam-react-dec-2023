@@ -1,3 +1,5 @@
+import './Register.css'
+
 export default function Register() {
     return(
 <section id="register-page" className="content auth">
@@ -11,7 +13,7 @@ export default function Register() {
         type="email"
         id="email"
         name="email"
-        placeholder="maria@email.com"
+        placeholder="example@gmail.com"
       />
 
       <label htmlFor="pass">Password:</label>
