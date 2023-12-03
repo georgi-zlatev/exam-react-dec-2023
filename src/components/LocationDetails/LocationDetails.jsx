@@ -64,11 +64,11 @@ export default function LocationDetails() {
       </article>
       
 
-        {/* {/* <!-- Edit/Delete buttons ( Only for creator of this game )  -->
+
     <div className="buttons">
-      <a href="#" className="button">Edit</a>
-      <a href="#" className="button">Delete</a>
-    </div> */}
+      <a href="#" className="btn submit">Edit</a>
+      <a href="#" className="btn submit">Delete</a>
+    </div> 
       
 
       
