@@ -7,6 +7,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import LocationList from "./components/LocationsListItem/LocationsList";
 import About from "./components/About/About";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 
 function App() {
   return (
@@ -16,6 +18,9 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/locations" element={<LocationList />} />
       <Route path="/about" element={<About />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
       </Routes>
       <Footer/>
     </div>
