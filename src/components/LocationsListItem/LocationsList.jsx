@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 import './LocationsList.css';
 
-import * as locationService from '../../services/LocationService'
+import * as locationService from '../../services/locationService'
 import LocationListItem from "./LocationListItem/LocationListItem"
 
 export default function LocationList() {
