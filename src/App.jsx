@@ -15,6 +15,7 @@ import About from "./components/About/About";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Logout from "./components/Logout/Logout";
+import LocationDetails from "./components/LocationDetails/LocationDetails";
 
 function App() {
   const navigate = useNavigate()
@@ -63,6 +64,7 @@ const values = {
       <Route path="/login" element={<Login loginSubmitHandler={loginSubmitHandler}/>} />
       <Route path="/register" element={<Register />} />
       <Route path={Path.Logout} element={<Logout/>}/>
+      <Route path="/locations/:locationId" element={<LocationDetails />} />
 
       </Routes>
       <Footer/>
