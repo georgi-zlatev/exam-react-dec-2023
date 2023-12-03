@@ -36,8 +36,8 @@ export default function LocationDetails() {
   <img src={location.imageUrl} className="card-img-top" alt={location.title}/>
   <div className="card-body">
     <h2>{location.title}</h2>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <p className="text">{location.summary}</p>
+    <h3>{location.category}</h3>
+    <p className="card-text">{location.summary}</p>
     <Link to={`/locations`} className="btn btn-primary details-button">Back</Link>
   </div>
 

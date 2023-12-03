@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary ">
         <div className="container-fluid">
           <Link to="/" className="navbar-brand">Local Food Events</Link>
           <button

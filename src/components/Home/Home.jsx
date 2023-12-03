@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Home.css"; // Import the CSS file
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -15,12 +16,13 @@ export default function Home() {
 
 
 
-      <div class="card">
-  <div class="card-body">
-    <h5 class="card-title">  Discover nice brunch and lunch places in Sofia 
+      <div className="card">
+  <div className="card-body">
+  <img src='/recipenoodlespastaicon_109880.ico' className="card-img-top" alt={location.title}/>
+    <h5 className="card-title">  Discover nice brunch and lunch places in Sofia 
 </h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="/locations" class="btn btn-primary">All locations</a>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <Link to={`/locations`} className="btn btn-primary">All Locations</Link>
   </div>
 </div>
 
