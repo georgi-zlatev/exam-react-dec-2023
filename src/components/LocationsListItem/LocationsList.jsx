@@ -19,7 +19,7 @@ locationService.getAll()
 
   <div className="row">
         {locations.map(location => (
-          <div key={location._id} className="col-md-3 mb-3 items"> {/* Use col-md-4 to create three columns */}
+          <div key={location._id} className="col-md-3 mb-3 items">
             <LocationListItem {...location} />
           </div>
         ))}

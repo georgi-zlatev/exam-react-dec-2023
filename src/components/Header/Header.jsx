@@ -41,7 +41,7 @@ export default function Header() {
 
           {isAuthenticated && (
           <div id="user">
-            <Link to="/games/create">Create Game</Link>
+            <Link to="/locations/create">Create Location</Link>
             <Link to="/logout">Logout</Link>
             <span>|  Welcome, {username}</span>
           </div>
