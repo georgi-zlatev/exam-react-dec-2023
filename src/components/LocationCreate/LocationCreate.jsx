@@ -1,75 +1,68 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
-import * as locationService from '../../services/locationService'
+import * as locationService from "../../services/locationService";
 
 export default function LocationCreate() {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
-    const createLocationSubmitHandler = async (e) => {
-        e.preventDefault();
+  const createLocationSubmitHandler = async (e) => {
+    e.preventDefault();
 
-        const locationData = Object.fromEntries(new FormData(e.currentTarget))
+    const locationData = Object.fromEntries(new FormData(e.currentTarget));
 
-        try {
-            await locationService.create(locationData)
+    try {
+      await locationService.create(locationData);
 
-            navigate('/locations')
-        } catch (err) {
-            console.log(err);
-        }
+      navigate("/locations");
+    } catch (err) {
+      // Error notification
+      console.log(err);
     }
-    return(
-        <div>
-      <h1>Create a New Location</h1>
+  };
+
+  return (
+    <section id="create-page" className="auth">
       <form id="create" onSubmit={createLocationSubmitHandler}>
-        <div className="form-group">
-          <label htmlFor="locationName">Location Name:</label>
+        <div className="container">
+          <h1>Create Location</h1>
+          <label htmlFor="leg-title">Location title:</label>
           <input
             type="text"
-            id="locationName"
-            name="locationName"
-            placeholder="Enter location name"
-            className="form-control"
+            id="title"
+            name="title"
+            placeholder="Enter location title..."
           />
-        </div>
 
-        <div className="form-group">
-          <label htmlFor="foodCategory">Food Category:</label>
+          <label htmlFor="category">Category:</label>
           <input
             type="text"
-            id="foodCategory"
-            name="foodCategory"
-            placeholder="Enter food category"
-            className="form-control"
+            id="category"
+            name="category"
+            placeholder="Enter location category..."
           />
-        </div>
 
-        <div className="form-group">
-          <label htmlFor="imageField">Image URL:</label>
+          {/* <label htmlFor="levels">MaxLevel:</label>
+          <input
+            type="number"
+            id="maxLevel"
+            name="maxLevel"
+            min="1"
+            placeholder="1"
+          /> */}
+
+          <label htmlFor="location-img">Image:</label>
           <input
             type="text"
-            id="imageField"
-            name="imageField"
-            placeholder="Enter image URL"
-            className="form-control"
+            id="imageUrl"
+            name="imageUrl"
+            placeholder="Upload a photo..."
           />
-        </div>
 
-        <div className="form-group">
           <label htmlFor="summary">Summary:</label>
-          <textarea
-            id="summary"
-            name="summary"
-            placeholder="Enter location summary"
-            className="form-control"
-            rows="4"
-          ></textarea>
+          <textarea name="summary" id="summary"></textarea>
+          <input className="btn submit" type="submit" value="Create Location" />
         </div>
-
-        <button type="submit" className="btn btn-primary">
-          Create Location
-        </button>
       </form>
-    </div>
-    )
+    </section>
+  );
 }

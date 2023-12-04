@@ -67,6 +67,7 @@ const values = {
       <Route path={Path.Logout} element={<Logout/>}/>
       <Route path="/locations/:locationId" element={<LocationDetails />} />
       <Route path="/locations/create" element={<LocationCreate />} />
+
       </Routes>
       <Footer/>
       </AuthContext.Provider>
