@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 
 import * as locationService from '../../services/locationService'
 
-export default function LocationGreate() {
+export default function LocationCreate() {
     const navigate = useNavigate()
 
     const createLocationSubmitHandler = async (e) => {
