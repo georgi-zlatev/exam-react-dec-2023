@@ -41,15 +41,6 @@ export default function LocationCreate() {
             placeholder="Enter location category..."
           />
 
-          {/* <label htmlFor="levels">MaxLevel:</label>
-          <input
-            type="number"
-            id="maxLevel"
-            name="maxLevel"
-            min="1"
-            placeholder="1"
-          /> */}
-
           <label htmlFor="location-img">Image:</label>
           <input
             type="text"
