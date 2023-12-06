@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState, useReducer } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import "./LocationDetails.css";
 
 import * as locationService from "../../services/locationService";
@@ -16,6 +16,7 @@ export default function LocationDetails() {
   // const [reviews, setReviews] = useState([])
   const { locationId } = useParams();
   const [reviews, dispatch] = useReducer(reducer, []);
+  const navigate = useNavigate()
 
   useEffect(() => {
     locationService.getOne(locationId).then(setLocation);
@@ -54,6 +55,7 @@ export default function LocationDetails() {
   const { values, onChange, onSubmit } = useForm(addReviewHandler, {
     review: "",
   });
+  
   return (
     <section id="location-details">
       <h1>Location Details</h1>
@@ -63,6 +65,7 @@ export default function LocationDetails() {
         alt={location.title}
       />
       <div className="card-body">
+        <br />
         <h2>{location.title}</h2>
         <h3>{location.category}</h3>
         <p className="card-text">{location.summary}</p>

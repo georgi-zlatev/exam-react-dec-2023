@@ -27,3 +27,5 @@ export const edit = async (locationId, locationData) =>{
 
   return result
 }
+
+export const remove = async (locationId) => request.remove(`${baseUrl}/${locationId}`);
