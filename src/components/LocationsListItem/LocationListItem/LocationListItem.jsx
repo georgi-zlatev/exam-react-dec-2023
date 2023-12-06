@@ -14,7 +14,8 @@ export default function LocationListItem ({
     
     return(
         <div className="card">
-          <img src={imageUrl} className="card-img-top-bottom" alt={title}/>
+          <img src={imageUrl} className="card-img" alt={title}/>
+          <br />
           <h6>{category}</h6>
           <h2 className="card-title">{title}</h2>
 

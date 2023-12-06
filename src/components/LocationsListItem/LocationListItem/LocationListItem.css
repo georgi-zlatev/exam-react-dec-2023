@@ -2,6 +2,7 @@
     width: 18rem;
     padding: 20px;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .details-button{
@@ -10,3 +11,5 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+
