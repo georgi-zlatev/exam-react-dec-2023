@@ -17,6 +17,7 @@ import Register from "./components/Register/Register";
 import Logout from "./components/Logout/Logout";
 import LocationDetails from "./components/LocationDetails/LocationDetails";
 import LocationCreate from "./components/LocationCreate/LocationCreate";
+import LocationEdit from "./components/LocationEdit/LocationEdit";
 
 function App() {
 //   const navigate = useNavigate()
@@ -67,6 +68,7 @@ function App() {
       <Route path={Path.Logout} element={<Logout/>}/>
       <Route path="/locations/:locationId" element={<LocationDetails />} />
       <Route path="/locations/create" element={<LocationCreate />} />
+      <Route path={Path.LocationEdit} element={<LocationEdit />} />
 
       </Routes>
       <Footer/>

@@ -26,7 +26,7 @@ export default function LocationEdit() {
 
     try {
       await locationService.edit(locationId, values);
-      navigate("locations");
+      navigate(`/locations/${locationId}`);
     } catch (error) {
       console.log(error);
     }
