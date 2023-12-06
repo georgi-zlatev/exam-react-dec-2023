@@ -6,6 +6,9 @@ import * as locationService from "../../services/locationService";
 import * as reviewService from "../../services/reviewService";
 import AuthContext from "../../contexts/authContexts";
 import reducer from "./reviewReducer";
+import { pathToUrl } from "../../utils/pathUtils";
+import useForm from "../../hooks/useForm";
+import Path from "../../paths";
 
 export default function LocationDetails() {
   const {email, userId} = useContext(AuthContext)
@@ -40,6 +43,19 @@ export default function LocationDetails() {
     })
   };
 
+  const deleteButtonClickHandler = async () => {
+    const hasConfirmed = confirm(`Are you sure you want to delete ${location.title}`);
+
+    if (hasConfirmed) {
+        await locationService.remove(locationId);
+
+        navigate('/locations');
+    }
+}
+
+const { values, onChange, onSubmit } = useForm(addReviewHandler, {
+    review: '',
+});
   return (
     <section id="location-details">
       <h1>Location Details</h1>
@@ -64,11 +80,18 @@ export default function LocationDetails() {
           </ul>
           {reviews.length === 0 && <p className="no-reviews">No reviews.</p>}
         </div>
+
+        {userId === location._ownerId && (
+                    <div className="buttons">
+                        <Link to={(pathToUrl(Path.LocationEdit, { locationId }))} className="button">Edit</Link>
+                        <button className="button" onClick={deleteButtonClickHandler}>Delete</button>
+                    </div>
+                )}
      
         <article className="create-review">
         <label>Add new review:</label>
-        <form className="form" onSubmit={addReviewHandler}>
-          <textarea name="review" placeholder="Review......"></textarea>
+        <form className="form" onSubmit={onSubmit}>
+          <textarea name="review" value={values.location} onChange={onChange} placeholder="Review......"></textarea>
           <input className="btn submit" type="submit" value="Add Review" />
         </form>
       </article>
