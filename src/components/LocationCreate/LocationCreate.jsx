@@ -23,6 +23,7 @@ export default function LocationCreate() {
     <section id="create-page" className="auth">
       <form id="create" onSubmit={createLocationSubmitHandler}>
         <div className="container">
+          <br />
           <h1>Create Location</h1>
           <label htmlFor="leg-title">Location title:</label>
           <input
