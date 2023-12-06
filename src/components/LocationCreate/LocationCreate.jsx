@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-
 import * as locationService from "../../services/locationService";
 
 export default function LocationCreate() {
@@ -43,10 +42,10 @@ export default function LocationCreate() {
 
           <label htmlFor="location-img">Image:</label>
           <input
-            type="text"
+            type="url"
             id="imageUrl"
             name="imageUrl"
-            placeholder="Upload a photo..."
+            placeholder="Enter a valid image URL..."
           />
 
           <label htmlFor="summary">Summary:</label>

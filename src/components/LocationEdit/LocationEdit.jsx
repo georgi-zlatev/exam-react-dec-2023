@@ -66,7 +66,7 @@ export default function LocationEdit() {
 
           <label htmlFor="location-img">Image:</label>
           <input
-            type="text"
+            type="url"
             id="imageUrl"
             name="imageUrl"
             placeholder="Upload a photo..."
