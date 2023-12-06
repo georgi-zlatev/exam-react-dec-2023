@@ -32,11 +32,13 @@ export const request = async (method, url, data) => {
     return{}
   }
 
+  const result = await response.json();
+
+
   if (!response.ok) {
     throw result
   }
 
-  const result = await response.json();
 
   return result;
 };

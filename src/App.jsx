@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '@fortawesome/fontawesome-free/css/all.css';
 
 import * as authService from './services/authService'
-import AuthContext from "./contexts/authContexts";
+import AuthContext, { AuthProvider } from "./contexts/authContexts";
 import Path from "./paths";
 
 import Home from "./components/Home/Home";
@@ -19,50 +19,50 @@ import LocationDetails from "./components/LocationDetails/LocationDetails";
 import LocationCreate from "./components/LocationCreate/LocationCreate";
 
 function App() {
-  const navigate = useNavigate()
-  const [auth, setAuth] = useState({})
+//   const navigate = useNavigate()
+//   const [auth, setAuth] = useState({})
 
-  const loginSubmitHandler = async (values) => {
-    const result = await authService.login(values.email, values.password)
+//   const loginSubmitHandler = async (values) => {
+//     const result = await authService.login(values.email, values.password)
 
-    setAuth(result);
-    localStorage.setItem('accessToken', result.accessToken)
-    navigate(Path.Home)
-  }
+//     setAuth(result);
+//     localStorage.setItem('accessToken', result.accessToken)
+//     navigate(Path.Home)
+//   }
 
   
 
-  const registerSubmitHandler = async (values) => {
-    console.log(values);
-    const result = await authService.register(values.email, values.password);
+//   const registerSubmitHandler = async (values) => {
+//     console.log(values);
+//     const result = await authService.register(values.email, values.password);
 
-    setAuth(result);
+//     setAuth(result);
 
-    navigate(Path.Home);
-}
+//     navigate(Path.Home);
+// }
 
-const logoutHandler = () => {
-  setAuth({});
-  localStorage.removeItem('accessToken')
-}
+// const logoutHandler = () => {
+//   setAuth({});
+//   localStorage.removeItem('accessToken')
+// }
 
-const values = { 
-    loginSubmitHandler, 
-    registerSubmitHandler,
-    logoutHandler,
-    username: auth.username || auth.email, 
-    email: auth.email, 
-    isAuthenticated: !!auth.accessToken
-  }
+// const values = { 
+//     loginSubmitHandler, 
+//     registerSubmitHandler,
+//     logoutHandler,
+//     username: auth.username || auth.email, 
+//     email: auth.email, 
+//     isAuthenticated: !!auth.accessToken
+//   }
   return (
     <div>
-          <AuthContext.Provider value={values}>
+<AuthProvider>
       <Header/>
       <Routes>  
       <Route path="/" element={<Home />} />
       <Route path="/locations" element={<LocationList />} />
       <Route path="/about" element={<About />} />
-      <Route path="/login" element={<Login loginSubmitHandler={loginSubmitHandler}/>} />
+      <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path={Path.Logout} element={<Logout/>}/>
       <Route path="/locations/:locationId" element={<LocationDetails />} />
@@ -70,7 +70,8 @@ const values = {
 
       </Routes>
       <Footer/>
-      </AuthContext.Provider>
+      </AuthProvider>
+          
     </div>
   );
 }

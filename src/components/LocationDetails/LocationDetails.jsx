@@ -1,33 +1,43 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useReducer } from "react";
 import { useParams, Link } from "react-router-dom";
 import "./LocationDetails.css"
 
 import * as locationService from "../../services/locationService";
 import * as reviewService from "../../services/reviewService";
 import AuthContext from "../../contexts/authContexts";
+import reducer from "./reviewReducer";
 
 export default function LocationDetails() {
-  const {email} = useContext(AuthContext)
+  const {email, userId} = useContext(AuthContext)
   const [location, setLocation] = useState({});
-  const [reviews, setReviews] = useState([])
+  // const [reviews, setReviews] = useState([])
   const { locationId } = useParams();
+  const [reviews, dispatch] = useReducer(reducer, [])
 
   useEffect(() => {
     locationService.getOne(locationId).then(setLocation);
 
-    reviewService.getAll(locationId).then(setReviews);
+    reviewService.getAll(locationId)
+      .then((result) => {
+        dispatch({
+          type: 'GET_ALL_REVIEWS',
+          payload: result,
+        })
+      });
   }, [locationId]);
 
-  const addReviewHandler = async (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+  const addReviewHandler = async (values) => {
     const newReview = await reviewService.create(
-        locationId,
-      formData.get("review"),
-    );
+      locationId,
+      values.review
+    )
 
-    setReviews(state => [...state, {...newReview, author: {email}}])
-    console.log(newReview);
+    newReview.owner = {email}
+
+    dispatch({
+      type:'ADD_REVIEW',
+      payload: newReview
+    })
   };
 
   return (
