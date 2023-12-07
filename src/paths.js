@@ -3,7 +3,7 @@ const Path = {
     Logout: '/logout',
     LocationEdit: '/locations/:locationId/edit',
     LocationDelete: '/locations/:locationId/delete',
-    LocationDetails: '/lcoations/:locationId',
+    LocationDetails: '/locations/:locationId',
 };
 
 export default Path;

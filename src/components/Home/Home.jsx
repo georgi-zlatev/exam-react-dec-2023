@@ -1,9 +1,23 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import * as locationService from '../../services/locationService';
 import "./Home.css"; // Import the CSS file
 import { Link } from "react-router-dom";
+import LatestLocation from "./LatestGame/LatestGame";
+import withAuth from "../../HOC/withAuth";
 
-export default function Home() {
+function Home({
+  _id,
+  accessToken,
+  email,
+}) {
+  const [latestLocations, setLatestLocations] = useState([])
+
+  useEffect(() => {
+    locationService.getLatest()
+    .then(result => setLatestLocations(result))
+  }, [])
+
+
   return (
     <div className="welcome-world">
       <h1>Welcome to Local Food Events</h1>
@@ -13,19 +27,17 @@ export default function Home() {
         eateries to hidden gems, Local Food Events provides a curated guide to
         satisfy your cravings.
       </p>
+<br />
+<h1>Latest Locations</h1>
+{latestLocations.map(location => <LatestLocation {...location} />)}
 
-
-
-      <div className="card">
-  <div className="card-body">
-  <img src='/recipenoodlespastaicon_109880.ico' className="card-img-top" alt={location.title}/>
-    <h5 className="card-title">  Discover nice brunch and lunch places in Sofia 
-</h5>
-    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <Link to={`/locations`} className="btn btn-primary">All Locations</Link>
-  </div>
-</div>
+{!latestLocations.length && <p>There are no locations currently!</p>}
+     
 
     </div>
   );
 }
+
+const EnchancedHome = withAuth(Home);
+
+export default EnchancedHome;

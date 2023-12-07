@@ -8,18 +8,16 @@ export default function LatestLocation({
     title,
     category,
 }) {
+    
     return (
-        <div className="location">
-            <div className="image-wrap">
-                <img src={imageUrl} />
-            </div>
-            <h3>{title}</h3>
-            <div className="rating">
-                <p>{category}</p>
-            </div>
-            <div className="data-buttons">
+        <div className="card">
+          <img src={imageUrl} className="card-img" alt={title}/>
+          <br />
+          <h6>{category}</h6>
+          <h2 className="card-title">{title}</h2>
+
+
                 <Link to={pathToUrl(Path.LocationDetails, { locationId: _id })} className="btn details-btn">Details</Link>
             </div>
-        </div>
     );
 }
