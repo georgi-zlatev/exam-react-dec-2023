@@ -52,7 +52,7 @@ The home page a short description of the websites main idea and a link in the fo
 Here are listed all the locations. Each location contains image, restaurant type and name of the restaurant. The button "Details" is visible only to registered users.
 ![image](https://github.com/georgi-zlatev/exam-react-dec-2023/assets/9295068/625e91fe-08cf-44df-97c9-9c0d013ad40b)
 
-This is the view of the non-owner/non-publisher of the restaurant - the user can write reviews, see other reviews and go back to the list witl all locations:
+This is the view of the non-owner/non-publisher of the restaurant - the user can write reviews, see other reviews and go back to the list with all locations:
 ![image](https://github.com/georgi-zlatev/exam-react-dec-2023/assets/9295068/a55202ff-81ba-4ce0-a928-cd5652f56aee)
 
 
@@ -93,6 +93,7 @@ There is a validation if the input is email. If you are already registered there
 There is about page telling more about the project
 
 5. Known issues
+
 The data inserted (about locations, reviews and user registrations) is lost after the server is stopped.
 
 6. Contributing to the project - in order to contribute to the project it may be done via pull requests.
