@@ -37,7 +37,7 @@ cd softuni-practice-server
 node server.js
 ```
 
-### Components
+## Components
 
 The app consists of a couple of pages and views.
 
@@ -72,10 +72,10 @@ There is a validation if the input is email. If you are already registered there
 
 **About page**
 
-### Known issues
+## Known issues
 
 The data inserted (about locations, reviews and user registrations) is lost after the server is stopped.
 
-### Contributing to the project - in order to contribute to the project it may be done via pull requests.
+## Contributing to the project - in order to contribute to the project it may be done via pull requests.
 
 This project is copyrighted and any redistribution or unauthorised copy is not allowed without any written permission.
