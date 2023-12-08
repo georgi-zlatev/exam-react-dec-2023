@@ -19,8 +19,8 @@ The purpose of this project is show the skills and techniques learned in the cou
 This repository works using ReactJS for the frontend, and the Softuni practice server for the backend.
 
 Your folder structure should be like this:
-C://your-directory/exam-react-dec-2023
-C://your-directory/softuni-practice-server
+- C://your-directory/exam-react-dec-2023
+- C://your-directory/softuni-practice-server
 
 After you have downloaded all the necessary resources, you need to start the application.
 
