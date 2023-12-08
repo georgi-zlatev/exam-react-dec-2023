@@ -41,8 +41,8 @@ node server.js
 
 The app consists of a couple of pages and views.
 
-**Homepage**
-**Locations**
+- **Homepage**
+- **Locations**
 
 Each location contains image, restaurant type and name of the restaurant. The button "Details" is visible only to registered users.
 
@@ -51,26 +51,26 @@ A registered and logged in user can write reviews, see other reviews and go back
 The owner can edit and delete a listing:
 
 
-**Location detailed view**
+- **Location detailed view**
 
 The details page is visible only for registered users.
 
-**Create location**
+- **Create location**
 
 The create location is visible only to authenticated users (logged-in users). There is a input validation if the image is URL. 
 
 
-**Edit location**
+- **Edit location**
 
-**Delete location**
+- **Delete location**
 
-**Login**
+- **Login**
 There is a validation if the input is email. If you are not registered there is a refering link to the register page.
 
-**Register**
+- **Register**
 There is a validation if the input is email. If you are already registered there is a refering link to the login page.
 
-**About page**
+- **About page**
 
 ## Known issues
 
