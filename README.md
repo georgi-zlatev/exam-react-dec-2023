@@ -25,10 +25,11 @@ C://your-directory/softuni-practice-server
 After you have downloaded all the necessary resources, you need to start the application.
 
 Run the application:
-
+```
 cd exam-react-dec-2023
 npm run dev
 ```
+
 Run the server:
 
 ```
