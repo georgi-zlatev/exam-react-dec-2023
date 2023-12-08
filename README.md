@@ -65,9 +65,11 @@ The create location is visible only to authenticated users (logged-in users). Th
 - **Delete location**
 
 - **Login**
+
 There is a validation if the input is email. If you are not registered there is a refering link to the register page.
 
 - **Register**
+
 There is a validation if the input is email. If you are already registered there is a refering link to the login page.
 
 - **About page**
